@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}{{cat.name}}{% endblock %}
+{% block head %}
+<link href="/media/css/photoswipe.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/media/js/klass.min.js"></script>
+<script type="text/javascript" src="/media/js/code.photoswipe-3.0.5.min.js"></script>
+<script type="text/javascript">
+    (function(window, PhotoSwipe){
+        document.addEventListener('DOMContentLoaded', function(){
+            var
+                options = {},
+                instance = PhotoSwipe.attach( window.document.querySelectorAll('#Gallery a'), options );
+                console.log ( instance );
+        }, false);
+    }(window, window.Code.PhotoSwipe));
+</script>
+{% endblock %}
+{% block content %}
+    <div class="nav-bar">
+        <a href="{% url home %}"><img src="/media/img/logo-nav-bar.png" /></a>
+    </div>
+    <div class="summary">
+        {{cat.summary}}
+        <div class="clearfix">
+        <div class="detail"><a href="aaa">查看详细</a></div></div>
+    </div>
+    <div class="home">
+        <ul id="Gallery" class="gallery">
+        {%  for photo in photos %}
+            <li><a href="/media/{{photo.t480}}"><img src="/media/{{photo.t220}}" width="102" height="102" /></a></li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

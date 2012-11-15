@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}猫鉴{% endblock %}
+{% block content %}
+    <div class="nav-bar">
+    </div>
+    <div class="home">
+        <ul>
+        {%  for cat in cats %}
+            <li>
+                <a href="{% url detail cat.id %}">
+                    <img width="102" height="102" src="/media/{{cat.avatar}}" />
+                    <!-- <div>{{cat.name}}</div> -->
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
