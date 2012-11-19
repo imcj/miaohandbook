@@ -25,6 +25,18 @@ DATABASES = {
     }
 }
 
+if 1== os.environ.get ( "PRODUCTION", 0 ):
+    DATABASES = {
+        'default' : {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': os.environ.get ( "PRODUCTION_MIAOHANDBOOK_DB_NAME", '' ),
+            'USER': os.environ.get ( "PRODUCTION_MIAOHANDBOOK_DB_USER", '' ),
+            'PASSWORD': os.environ.get ( "PRODUCTION_MIAOHANDBOOK_DB_PASSWORD", '' ),
+            'HOST': os.environ.get ( "PRODUCTION_MIAOHANDBOOK_DB_HOST", '' ),
+            'PORT': os.environ.get ( "PRODUCTION_MIAOHANDBOOK_DB_PORT", '' ),
+        }
+    }
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
