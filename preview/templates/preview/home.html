@@ -1,18 +1,20 @@
 {% extends "base.html" %}
-{% block title %}猫鉴{% endblock %}
+{% block title %}喵星人大百科全书{% endblock %}
 {% block content %}
-    <div class="nav-bar">
-    </div>
-    <div class="home">
-        <ul>
-        {%  for cat in cats %}
-            <li>
-                <a href="{% url detail cat.id %}">
-                    <img width="102" height="102" src="/media/{{cat.avatar}}" />
-                    <!-- <div>{{cat.name}}</div> -->
-                </a>
-            </li>
-        {% endfor %}
-        </ul>
-    </div>
+<div class="nav-bar">
+</div>
+<div class="home">
+    <ul>
+    {% comment %}
+    {%  for cat in cats %}
+        <li>
+            <a href="{% url detail cat.id %}">
+                <img width="102" height="102" src="/media/{{cat.avatar}}" />
+                <!-- <div>{{cat.name}}</div> -->
+            </a>
+        </li>
+    {% endfor %}
+    {% endcomment %}
+    </ul>
+</div>
 {% endblock %}

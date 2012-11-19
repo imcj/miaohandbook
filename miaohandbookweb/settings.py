@@ -127,6 +127,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'handbook',
     'preview',
+    'tastypie',
 )
 
 # A sample logging configuration. The only tangible logging

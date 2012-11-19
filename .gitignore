@@ -1,3 +1,4 @@
 media/img/avatar
 media/img/photo
 *.pyc
+*.sqlite

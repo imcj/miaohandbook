@@ -55,6 +55,12 @@ class CatPhoto ( models.Model ):
 	cat = models.ForeignKey ( Cat, )
 	origin = models.ImageField ( upload_to = cat_photo_path_with_uplaod_to )
 
+	def dirname ( self ):
+		return os.path.dirname ( self.origin.url )
+
+	def basename ( self ):
+		return os.path.basename ( self.origin.url )
+
 	def t480 ( self ):
 		url = self.origin.url
 		return os.path.join ( os.path.dirname ( url ), "%d_%s" % ( 480, os.path.basename ( url ) ) )
